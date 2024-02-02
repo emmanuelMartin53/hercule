@@ -43,3 +43,47 @@ for (let indexWork = 0; indexWork < 12; indexWork++) {
     base.displayWork(indexWork);
 }
 
+//ETAPE 6
+
+const hour = base.getHour();
+const availability = document.getElementById('availability')
+console.log(hour);
+
+if (hour < 8 || hour > 20) {
+    availability.textContent = "Non disponible";
+    availability.classList.add("off");
+} else {
+    availability.textContent = "disponible";
+}
+
+// ETAPE 7 : FONCTION
+
+const nickName = function (name, department) {
+    return(`${name}-du-${department}`);
+
+}
+const pseudo = nickName(profil.name, profil.department);
+
+const profllName = document.getElementById('profil-name');
+profllName.textContent = pseudo;
+
+
+// ETAPE 8 EVENT
+
+const menuToggler = document.querySelector('#menu-toggler');
+const cliquer = function () {
+    const bannerHeader = document.getElementById('header-banner');
+    bannerHeader.classList.toggle('banner--open')
+}
+menuToggler.addEventListener('click', cliquer)
+
+// ETAPE 9
+
+const form = document.getElementById('contact');
+
+form.addEventListener('submit', function (event) {
+    console.log(event)
+    event.preventDefault();
+    alert`Hercule ne souhaite pas etre dérangé`
+    console.log(`Hercule ne souhaite pas etre dérangé`)
+})
