@@ -16,14 +16,30 @@ base.fillProfil(profil);
 
 // ETAPE 3 : Tableau
 
-const friends = [
+profil.friends = [
     'Jupiter',
     'Junon',
     'Alcmène',
     'Déjanire',
 ];
 console.log(profil)
+// j'affiche les amis d'Hercule
+base.printFriends(profil.friends);
+// j'affiche le meilleur ami d'Hercule
+base.setBestFriend(profil.friends[0])
 
-base.printFriends(friends);
+// ETAPE 4 : DOM
 
-base.setBestFriend(friends[0])
+const title = document.createElement('h1');
+title.className = "banner__title";
+title.textContent = "Vous consultez le profil de Hercule";
+
+const headerBanner = document.getElementById('header-banner');
+headerBanner.appendChild(title);
+
+// ETAPE 5 : BOUCLE
+
+for (let indexWork = 0; indexWork < 12; indexWork++) {
+    base.displayWork(indexWork);
+}
+
